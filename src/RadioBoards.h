@@ -9,6 +9,9 @@
   #elif defined(ARDUINO_HELTEC_WIFI_LORA_32)
     #define RADIO_BOARD_WIFI_LORA32
 
+  #elif defined(NUCLEO_L476RG_SEMTECH_LR1110)
+    #define RADIO_BOARD_NUCLEO_L476RG_SEMTECH_LR1110
+
   #else
     #error "Unable to resolve board type automatically, please select one from the supported list"
 
@@ -26,6 +29,8 @@
   #include "maintained/SeeedStudio/WM1110.h"
 #elif defined(RADIO_BOARD_WIFI_LORA32)
   #include "maintained/Heltec/WiFi_LoRa32.h"
+#elif defined(RADIO_BOARD_NUCLEO_L476RG_SEMTECH_LR1110)
+  #include "contributed/Semtech/LR1110.h"  
 
 #else
   #error "Unsupported or unknown radio board!"
