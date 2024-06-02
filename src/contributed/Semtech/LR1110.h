@@ -3,10 +3,8 @@
 
 // sources:
 // 
-// 
 
 #define RADIO_BOARDS_NAME "Semtech LR1110"  // ** pin #'s when used w/ vendor recommended MCU: Nucleo L476RG
-
 
 #define RADIO_NSS     (D7)
 #define RADIO_IRQ     (D5)
