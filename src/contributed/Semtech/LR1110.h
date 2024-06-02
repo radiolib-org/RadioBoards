@@ -1,32 +1,33 @@
-#if !defined(_RADIOBOARDS_MAINTAINED_SEEEDSTUDIO_WM1110_H)
-#define _RADIOBOARDS_MAINTAINED_SEEEDSTUDIO_WM1110_H
+#if !defined(_RADIOBOARDS_CONTRIBUTED_SEMTECH_LR1100_H)
+#define _RADIOBOARDS_CONTRIBUTED_SEMTECH_LR1100_H
 
 // sources:
-// https://github.com/SeeedJP/LBM_WM1110/blob/8adaddb00ccd59f37ed083c9990561ebd7883f38/src/internal/Wm1110Hardware.hpp
-// https://github.com/Seeed-Studio/Adafruit_nRF52_Arduino/blob/5aa3573913449410fd60f76b75673c53855ff2ec/variants/Seeed_Wio_Tracker_1110/variant.h
+// 
+// 
 
-#define RADIO_BOARDS_NAME "SeeedStudio WM1110"
+#define RADIO_BOARDS_NAME "Semtech LR1110"
 
-#define RADIO_NSS     (44)
-#define RADIO_IRQ     (2)
-#define RADIO_RST     (42)
-#define RADIO_GPIO    (43)
 
-// this board uses custom SPI to interface with the module
-#define RADIO_SPI     SPI
-#define RADIO_MISO    (47)
-#define RADIO_MOSI    (46)
-#define RADIO_SCK     (45)
+#define RADIO_NSS     (D7)
+#define RADIO_IRQ     (D5)
+#define RADIO_RST     (A0)
+#define RADIO_GPIO    (D3)
 
-#define RADIO_SPI_INIT                                      \
-  RADIO_SPI.setPins(RADIO_MISO, RADIO_SCK, RADIO_MOSI);     \
-  RADIO_SPI.begin();
+// this board does NOT use custom SPI to interface with the module
+// #define RADIO_SPI     SPI
+// #define RADIO_MISO    (xx)
+// #define RADIO_MOSI    (xx)
+// #define RADIO_SCK     (xx)
 
-// it also has custom RF switching
-#if RADIOLIB_SUPPORT_ENABLED
-  #define RADIO_RF_SWITCH
+// #define RADIO_SPI_INIT                                      \
+//   RADIO_SPI.setPins(RADIO_MISO, RADIO_SCK, RADIO_MOSI);     \
+//   RADIO_SPI.begin();
 
-  #define RADIO_RF_SWITCH_PINS                              \
+// it also does NOT have custom RF switching
+// #if RADIOLIB_SUPPORT_ENABLED
+//   #define RADIO_RF_SWITCH
+
+/*  #define RADIO_RF_SWITCH_PINS                              \
     static const uint32_t RadioBoards_rfswitch_pins[] = {               \
     RADIOLIB_LR11X0_DIO5, RADIOLIB_LR11X0_DIO6,             \
     RADIOLIB_NC, RADIOLIB_NC, RADIOLIB_NC                   \
@@ -47,4 +48,4 @@
 
 #endif
 
-#endif
+#endif */
