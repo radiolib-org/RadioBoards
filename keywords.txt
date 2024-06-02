@@ -1,0 +1,27 @@
+#######################################
+# Syntax Coloring Map For RadioBoards
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+RadioBoards	KEYWORD1
+RadioModule	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+RadioBeginSPI	KEYWORD2
+RadioEnableRfSwitch	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+RADIO_RF_SWITCH_PINS	LITERAL1
+RADIO_RF_SWITCH_TABLE	LITERAL1
+
+RADIO_BOARD_AUTO	LITERAL1
+RADIO_BOARD_WM1110	LITERAL1

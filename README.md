@@ -1,2 +1,2 @@
 # RadioBoards
-Crowd-soruced database of radio module pinouts
+Crowd-sourced database of radio module pinouts
