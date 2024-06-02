@@ -2,7 +2,7 @@
 #define _RADIOBOARDS_CONTRIBUTED_SEMTECH_LR1100_H
 
 // sources:
-// 
+// K4KDR hands-on testing w/ this hardware
 
 #define RADIO_BOARDS_NAME "Semtech LR1110"  // ** pin #'s when used w/ vendor recommended MCU: Nucleo L476RG
 
