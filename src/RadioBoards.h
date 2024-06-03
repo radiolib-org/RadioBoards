@@ -26,6 +26,8 @@
   #include "maintained/SeeedStudio/WM1110.h"
 #elif defined(RADIO_BOARD_WIFI_LORA32)
   #include "maintained/Heltec/WiFi_LoRa32.h"
+#elif defined(RADIO_BOARD_RASPBERRYPI_PICO)
+  #include "contributed/RaspberryPi/PI_PICO.h"
 
 #else
   #error "Unsupported or unknown radio board!"
