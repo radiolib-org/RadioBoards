@@ -6,6 +6,7 @@
 # Datatypes (KEYWORD1)
 #######################################
 
+Radio	KEYWORD1
 RadioBoards	KEYWORD1
 RadioModule	KEYWORD1
 

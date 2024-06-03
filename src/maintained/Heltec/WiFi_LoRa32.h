@@ -11,4 +11,8 @@
 #define RADIO_RST     (14)
 #define RADIO_GPIO    (33)
 
+#if RADIOLIB_SUPPORT_ENABLED
+  #define Radio       SX1276
+#endif
+
 #endif

@@ -22,12 +22,14 @@
   RADIO_SPI.setPins(RADIO_MISO, RADIO_SCK, RADIO_MOSI);     \
   RADIO_SPI.begin();
 
-// it also has custom RF switching
 #if RADIOLIB_SUPPORT_ENABLED
+  #define Radio       LR1110
+
+  // it also has custom RF switching
   #define RADIO_RF_SWITCH
 
   #define RADIO_RF_SWITCH_PINS                              \
-    static const uint32_t RadioBoards_rfswitch_pins[] = {               \
+    static const uint32_t RadioBoards_rfswitch_pins[] = {   \
     RADIOLIB_LR11X0_DIO5, RADIOLIB_LR11X0_DIO6,             \
     RADIOLIB_NC, RADIOLIB_NC, RADIOLIB_NC                   \
   };
