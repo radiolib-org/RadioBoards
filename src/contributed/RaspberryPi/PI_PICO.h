@@ -6,8 +6,6 @@
 
 #define RADIO_BOARDS_NAME "Raspberry Pi Pico"
 
-SX1262 radio = new Module(3, 20, 15, 2, SPI1, RADIOLIB_DEFAULT_SPI_SETTINGS);
-
 #define RADIO_NSS     (3)   // i.e., SX1262 radio = new Module(3, 20, 15, 2, SPI1, RADIOLIB_DEFAULT_SPI_SETTINGS);
 #define RADIO_IRQ     (20)
 #define RADIO_RST     (15)
