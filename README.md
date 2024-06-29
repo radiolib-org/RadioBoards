@@ -1,4 +1,4 @@
-# RadioBoards
+# RadioBoards [![PlatformIO Registry](https://badges.registry.platformio.org/packages/jgromes/library/RadioBoards.svg)](https://registry.platformio.org/libraries/jgromes/RadioBoards) [![Component Registry](https://components.espressif.com/components/jgromes/radioboards/badge.svg)](https://components.espressif.com/components/jgromes/radioboards)
 
 ## Crowd-sourced database of radio module pinouts
 
