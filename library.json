@@ -1,0 +1,26 @@
+{
+    "name": "RadioBoards",
+    "version": "0.0.1",
+    "description": "Crowd-sourced database of pinouts for sub-GHz radio module boards from various vendors, such as Heltec, LilyGo, SeeedStudio etc.",
+    "keywords": "radio, communication, lora, sx1278, sx1272, sx1262, heltec, lilygo, seeedstudio",
+    "homepage": "https://github.com/radiolib-org/RadioBoards",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/radiolib-org/RadioBoards.git"
+    },
+    "authors":
+    {
+        "name": "Jan Gromeš",
+        "email": "gromes.jan@gmail.com",
+        "maintainer": true
+    },
+    "license": "MIT",
+    "frameworks": "*",
+    "platforms": "*",
+    "headers": "RadioBoards.h",
+    "build":
+    {
+        "libLDFMode": "chain+"
+    }
+}
