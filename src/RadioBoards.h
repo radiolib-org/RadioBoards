@@ -29,8 +29,13 @@
     #define RADIO_BOARD_TTGO_T_BEAM
   
   // contributed boards
-  #elif defined(ARDUINO_ARCH_MBED_RP2040) || defined(ARDUINO_ARCH_RP2040)
+  #elif defined(ARDUINO_ARCH_MBED_RP2040)
     #define RADIO_BOARD_RASPBERRYPI_PICO
+
+  #elif defined(ARDUINO_ADAFRUIT_FEATHER_RP2040_RFM)
+    #define RADIO_BOARD_FEATHER_RP2040
+
+
 
   #else
     #error "Unable to resolve board type automatically, please select one from the supported list"
@@ -77,12 +82,15 @@
 #elif defined(RADIO_BOARD_RASPBERRYPI_PICO)
   #include "contributed/RaspberryPi/PI_PICO.h"
 
+#elif defined(RADIO_BOARD_FEATHER_RP2040)
+  #include "contributed/Adafruit/Feather_RP2040.h"
+
 #else
   #error "Unsupported or unknown radio board!"
 
 #endif
 
-#if RADIO_BOARDS_DEBUG
+#if defined (RADIO_BOARDS_DEBUG)
   #pragma message "RadioBoards using board: " RADIO_BOARDS_NAME
 #endif
 
