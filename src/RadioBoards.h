@@ -90,7 +90,7 @@
 
 #endif
 
-#if defined (RADIO_BOARDS_DEBUG)
+#if RADIO_BOARDS_DEBUG
   #pragma message "RadioBoards using board: " RADIO_BOARDS_NAME
 #endif
 
