@@ -66,6 +66,9 @@
 #elif defined(RADIO_BOARD_WIFI_LORA32_V3)
   #include "maintained/Heltec/WiFi_LoRa32_v3.h"
 
+#elif defined(RADIO_BOARD_HT_CT62)
+  #include "maintained/Heltec/HT-CT62.h"
+
 #elif defined(RADIO_BOARD_TTGO_LORA32_V1_V21)
   #include "maintained/LilyGo/TTGO_LoRa32_v1_v21.h"
 
