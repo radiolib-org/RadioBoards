@@ -85,6 +85,9 @@
 #elif defined(RADIO_BOARD_TTGO_T_BEAM)
   #include "maintained/LilyGo/TTGO_TBeam.h"
 
+#elif defined(RADIO_BOARD_RADIO_SHIELD)
+  #include "maintained/RadioShield/RadioShield.h"
+
 // contributed boards
 #elif defined(RADIO_BOARD_RASPBERRYPI_PICO)
   #include "contributed/RaspberryPi/PI_PICO.h"
