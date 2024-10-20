@@ -28,6 +28,9 @@
   #elif defined(ARDUINO_TBEAM_USE_RADIO_SX1276)
     #define RADIO_BOARD_TTGO_T_BEAM
   
+  #elif defined(__ASR6501__) || defined(ARDUINO_ARCH_ASR650X) || defined(DARDUINO_ARCH_ASR6601)
+    #define RADIO_BOARD_CUBECELL
+  
   // contributed boards
   #elif defined(ARDUINO_ARCH_MBED_RP2040)
     #define RADIO_BOARD_RASPBERRYPI_PICO
@@ -66,6 +69,9 @@
 
 #elif defined(RADIO_BOARD_HT_CT62)
   #include "maintained/Heltec/HT-CT62.h"
+
+#elif defined(RADIO_BOARD_CUBECELL)
+  #include "maintained/Heltec/CubeCell.h"
 
 #elif defined(RADIO_BOARD_TTGO_LORA32_V1_V21)
   #include "maintained/LilyGo/TTGO_LoRa32_v1_v21.h"
