@@ -18,6 +18,9 @@
 #define RADIO_MOSI    (46)
 #define RADIO_SCK     (45)
 
+// there's also an onboard LNA for the GNSS
+#define RADIO_GNSS_LNA_EN   (37)
+
 #define RADIO_SPI_INIT                                      \
   RADIO_SPI.setPins(RADIO_MISO, RADIO_SCK, RADIO_MOSI);     \
   RADIO_SPI.begin();
@@ -31,19 +34,19 @@
   #define RADIO_RF_SWITCH_PINS                              \
     static const uint32_t RadioBoards_rfswitch_pins[] = {   \
     RADIOLIB_LR11X0_DIO5, RADIOLIB_LR11X0_DIO6,             \
-    RADIOLIB_NC, RADIOLIB_NC, RADIOLIB_NC                   \
+    RADIO_GNSS_LNA_EN, RADIOLIB_NC, RADIOLIB_NC             \
   };
 
   #define RADIO_RF_SWITCH_TABLE \
   static const Module::RfSwitchMode_t RadioBoards_rfswitch_table[] = {  \
-    /* mode                  DIO5  DIO6 */                  \
-    { LR11x0::MODE_STBY,   { LOW,  LOW  } },                \
-    { LR11x0::MODE_RX,     { HIGH, LOW  } },                \
-    { LR11x0::MODE_TX,     { HIGH, HIGH } },                \
-    { LR11x0::MODE_TX_HP,  { LOW,  HIGH } },                \
-    { LR11x0::MODE_TX_HF,  { LOW,  LOW  } },                \
-    { LR11x0::MODE_GNSS,   { LOW,  LOW  } },                \
-    { LR11x0::MODE_WIFI,   { LOW,  LOW  } },                \
+    /* mode                  DIO5  DIO6  LNA */             \
+    { LR11x0::MODE_STBY,   { LOW,  LOW,  LOW  } },          \
+    { LR11x0::MODE_RX,     { HIGH, LOW,  LOW  } },          \
+    { LR11x0::MODE_TX,     { HIGH, HIGH, LOW  } },          \
+    { LR11x0::MODE_TX_HP,  { LOW,  HIGH, LOW  } },          \
+    { LR11x0::MODE_TX_HF,  { LOW,  LOW,  LOW  } },          \
+    { LR11x0::MODE_GNSS,   { LOW,  LOW,  HIGH } },          \
+    { LR11x0::MODE_WIFI,   { LOW,  LOW,  LOW  } },          \
     END_OF_MODE_TABLE,                                      \
   };
 

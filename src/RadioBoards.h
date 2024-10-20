@@ -35,8 +35,6 @@
   #elif defined(ARDUINO_ADAFRUIT_FEATHER_RP2040_RFM)
     #define RADIO_BOARD_FEATHER_RP2040
 
-
-
   #else
     #error "Unable to resolve board type automatically, please select one from the supported list"
 
