@@ -34,10 +34,8 @@ void setup() {
   Serial.begin(9600);
 
   // start SPI on the appropriate pins,
-  // configure and enable RF switching
-  // both of these have to be called before radio.begin()!
+  // this has to be called before radio.begin()!
   RadioBeginSPI();
-  RadioEnableRfSwitch(radio);
 
   // initialize the radio
   Serial.print(F("[Radio] Initializing ... "));
@@ -49,6 +47,9 @@ void setup() {
     Serial.println(state);
     while (true);
   }
+
+  // configure and enable RF switching
+  RadioEnableRfSwitch(radio);
 }
 
 void loop() {
