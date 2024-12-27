@@ -1,4 +1,4 @@
-version: "0.0.1"
+version: "1.0.0"
 description: "Crowd-sourced database of pinouts for sub-GHz radio module boards from various vendors, such as Heltec, LilyGo, SeeedStudio etc."
 tags: "radio, communication, lora, sx1278, sx1272, sx1262, heltec, lilygo, seeedstudio"
 url: "https://github.com/radiolib-org/RadioBoards"
