@@ -1,6 +1,15 @@
 version: "1.0.0"
 description: "Crowd-sourced database of pinouts for sub-GHz radio module boards from various vendors, such as Heltec, LilyGo, SeeedStudio etc."
-tags: "radio, communication, lora, sx1278, sx1272, sx1262, heltec, lilygo, seeedstudio"
+tags:
+  - radio
+  - communication
+  - lora
+  - sx1278
+  - sx1272
+  - sx1262
+  - heltec
+  - lilygo
+  - seeedstudio
 url: "https://github.com/radiolib-org/RadioBoards"
 repository: "https://github.com/radiolib-org/RadioBoards.git"
 license: "MIT"
@@ -8,4 +17,4 @@ dependencies:
   # Required IDF version
   idf: ">=4.1"
 maintainers:
-  "Jan Gromeš <gromes.jan@gmail.com>"
+  - Jan Gromeš <gromes.jan@gmail.com>
