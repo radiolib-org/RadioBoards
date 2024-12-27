@@ -30,6 +30,9 @@
   
   #elif defined(__ASR6501__) || defined(ARDUINO_ARCH_ASR650X) || defined(DARDUINO_ARCH_ASR6601)
     #define RADIO_BOARD_CUBECELL
+
+  #elif defined(ARDUINO_XIAO_ESP32S3)
+    #define RADIO_BOARD_XIAO_ESP32S3
   
   // contributed boards
   #elif defined(ARDUINO_ARCH_MBED_RP2040)
@@ -87,6 +90,9 @@
 
 #elif defined(RADIO_BOARD_RADIO_SHIELD)
   #include "maintained/RadioShield/RadioShield.h"
+
+#elif defined(RADIO_BOARD_XIAO_ESP32S3)
+  #include "maintained/SeeedStudio/XIAO_ESP32S3.h"
 
 // contributed boards
 #elif defined(RADIO_BOARD_RASPBERRYPI_PICO)
