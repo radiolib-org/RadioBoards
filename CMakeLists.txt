@@ -22,21 +22,12 @@ endif()
 
 project(radioboards)
 
-file(GLOB_RECURSE RADIOBOARDS_SOURCES
-  "src/*.cpp"
-)
+add_library(RadioBoards INTERFACE)
 
-add_library(RadioBoards ${RADIOBOARDS_SOURCES})
-
-target_include_directories(RadioBoards
-    PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
-           $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+target_include_directories(RadioBoards INTERFACE ./src)
 
 # use c++20 standard
 set_property(TARGET RadioBoards PROPERTY CXX_STANDARD 20)
-
-# enable most warnings
-target_compile_options(RadioBoards PRIVATE -Wall -Wextra)
 
 include(GNUInstallDirs)
 
