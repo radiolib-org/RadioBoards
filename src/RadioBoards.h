@@ -94,6 +94,9 @@
 #elif defined(RADIO_BOARD_XIAO_ESP32S3)
   #include "maintained/SeeedStudio/XIAO_ESP32S3.h"
 
+#elif defined(RADIO_BOARD_WAVESHARE_LORAWAN_HAT)
+  #include "maintained/Waveshare/LoRaWAN_Hat.h"
+
 // contributed boards
 #elif defined(RADIO_BOARD_RASPBERRYPI_PICO)
   #include "contributed/RaspberryPi/PI_PICO.h"
@@ -122,8 +125,12 @@
   // Module constructor
   #if defined(RADIO_SPI)
     #define RadioModule() Module(RADIO_NSS, RADIO_IRQ, RADIO_RST, RADIO_GPIO, RADIO_SPI)
+    #define RadioModuleHal(HAL) Module(HAL, RADIO_NSS, RADIO_IRQ, RADIO_RST, RADIO_GPIO, RADIO_SPI)
+  
   #else
     #define RadioModule() Module(RADIO_NSS, RADIO_IRQ, RADIO_RST, RADIO_GPIO)
+    #define RadioModuleHal(HAL) Module(HAL, RADIO_NSS, RADIO_IRQ, RADIO_RST, RADIO_GPIO)
+  
   #endif
 
   // RF switching
