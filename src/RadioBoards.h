@@ -41,6 +41,9 @@
   #elif defined(ARDUINO_ADAFRUIT_FEATHER_RP2040_RFM)
     #define RADIO_BOARD_FEATHER_RP2040
 
+  #elif defined(ARDUINO_LILYGO_T3S3_SX1262) || defined(ARDUINO_LILYGO_T3S3_SX1276) || defined(ARDUINO_LILYGO_T3S3_LR1121)
+    #define RADIO_BOARD_LILYGO_T3S3
+  
   #else
     #error "Unable to resolve board type automatically, please select one from the supported list"
 
@@ -103,6 +106,9 @@
 
 #elif defined(RADIO_BOARD_FEATHER_RP2040)
   #include "contributed/Adafruit/Feather_RP2040.h"
+
+#elif defined(RADIO_BOARD_LILYGO_T3S3)
+  #include "contributed/LilyGo/LilyGo_T3S3.h"
 
 #else
   #error "Unsupported or unknown radio board!"
