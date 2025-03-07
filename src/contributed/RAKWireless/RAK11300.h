@@ -8,7 +8,7 @@
 //    Arduino-Pico: https://github.com/earlephilhower/arduino-pico/blob/5bd1a3a0f6f4df55053daf2c13c853f233501c81/variants/rakwireless_rak11300/pins_arduino.h#L6
 // Based on: https://www.nico-maas.de/?p=2607
 
-#define RADIO_BOARDS_NAME "RAKWireless WisDuo RAK11300"
+#define RADIO_BOARDS_NAME "RAKWireless RAK11300"
 
 #define RADIO_NSS     (PIN_SPI1_SS)
 #define RADIO_IRQ     (PIN_SX1262_DIO1)
