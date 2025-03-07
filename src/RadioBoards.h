@@ -110,6 +110,9 @@
 #elif defined(RADIO_BOARD_LILYGO_T3S3)
   #include "contributed/LilyGo/LilyGo_T3S3.h"
 
+#elif defined(RADIO_BOARD_RAKWIRELESS_RAK11300)
+  #include "contributed/RAKWireless/RAK11300.h"
+
 #else
   #error "Unsupported or unknown radio board!"
 
