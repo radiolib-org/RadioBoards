@@ -45,6 +45,6 @@
     {Module::MODE_IDLE,  {LOW}},                            \
     {Module::MODE_RX,    {HIGH}},                           \
     {Module::MODE_TX,    {HIGH}},                           \
-    {Module::MODE_IDLE,  {LOW}},                            \
+    END_OF_MODE_TABLE,                                      \
   };
 #endif
