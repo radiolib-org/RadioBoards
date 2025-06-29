@@ -2,7 +2,7 @@
 #define _RADIOBOARDS_CONTRIBUTED_WAVESHARE_RP2040_LORA_H
 
 /*
- * This is a variant of the Waveshare RP2040 One monule with integrated SX1262 
+ * This is a variant of the Waveshare RP2040 One module with integrated SX1262 
  *
  * notes:
  * - it uses custom SPI pins --> must call RadioBeginSPI() before use
