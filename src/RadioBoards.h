@@ -35,6 +35,9 @@
     #define RADIO_BOARD_XIAO_ESP32S3
   
   // contributed boards
+  #elif defined(ARDUINO_WAVESHARE_RP2040_ONE)
+    #define RADIO_BOARD_WAVESHARE_RP2040_LORA
+
   #elif defined(ARDUINO_ARCH_MBED_RP2040)
     #define RADIO_BOARD_RASPBERRYPI_PICO
 
@@ -115,6 +118,9 @@
 
 #elif defined(RADIO_BOARD_RAKWIRELESS_RAK11300)
   #include "contributed/RAKWireless/RAK11300.h"
+
+#elif defined(RADIO_BOARD_WAVESHARE_RP2040_LORA)
+  #include "contributed/Waveshare/RP2040_LoRa.h"
 
 #else
   #error "Unsupported or unknown radio board!"
