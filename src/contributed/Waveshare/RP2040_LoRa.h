@@ -7,11 +7,11 @@
  * notes:
  * - it uses custom SPI pins --> must call RadioBeginSPI() before use
  * - it has an antenna switch --> to enable/use call RadioEnableRfSwitch(radio)
- * - this module has an XTAL (crystal oscillator that is not temperature
- *   compensated), which is not the default of RadioLib. The SPI initialization
- *   will correct this setting (could not find a better place for that)
+ * - it has an XTAL (crystal oscillator that is not temperature compensated),
+ *   which is not the default of RadioLib. The SPI initialization will correct
+ *   this setting (could not find a better place for that)
  *
- * Tested with the EU (686 Mhz) model but should work for others as well
+ * Tested with the EU (868 Mhz) model but should work for others as well
  * 
  * sources:
  *   https://www.waveshare.com/wiki/RP2040-LoRa
@@ -36,6 +36,8 @@
 // this board has a TX/RX antenna switch 
 #define RADIO_ANT_SW  (17)  // GP17
 
+
+// SPI pins are custom and requires calling RadioBeginSPI() before use
 #define RADIO_SPI_INIT              \
     RADIO_SPI.setSCK(RADIO_SCK);    \
     RADIO_SPI.setTX(RADIO_MOSI);    \
@@ -43,26 +45,29 @@
     RADIO_SPI.begin(false);         \
     radio.XTAL = true;
 
+
 #if RADIOLIB_SUPPORT_ENABLED
   #define Radio       SX1262
 
-  // it also has custom RF switching
+  // Antenna /  RF switching is supported but seems optional
   #define RADIO_RF_SWITCH
 
+  // antenna switch uses only 1 pin
   #define RADIO_RF_SWITCH_PINS \
   static const uint32_t RadioBoards_rfswitch_pins[Module::RFSWITCH_MAX_PINS] = {    \
       RADIO_ANT_SW, RADIOLIB_NC, RADIOLIB_NC, RADIOLIB_NC, RADIOLIB_NC              \
     }
 
+  // Antenna switch must be LOW when sending, HIGH when receiving
   #define RADIO_RF_SWITCH_TABLE \
   static const Module::RfSwitchMode_t RadioBoards_rfswitch_table[] = {  \
     /* mode              ANT_SW */  \
     {Module::MODE_IDLE,  {HIGH}},   \
-    {Module::MODE_RX,    {LOW}},    \
+    {Module::MODE_RX,    {HIGH}},    \
     {Module::MODE_TX,    {LOW}},    \
     END_OF_MODE_TABLE,              \
   }
 
-#endif
+#endif // RADIOLIB_SUPPORT_ENABLED
 
-#endif
+#endif // _RADIOBOARDS_CONTRIBUTED_WAVESHARE_RP2040_LORA_H
